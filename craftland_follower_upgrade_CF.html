@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craftland Follower Upgrade | Grow Your Craftland Community</title>
+<meta name="description" content="Craftland Follower Upgrade — quality sofas, chairs, tables and custom furniture. Netuaveer Chauraha.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #ddd}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,serif;font-size:24px;font-weight:700;letter-spacing:2px}
+.logo span{font-size:12px;display:block;letter-spacing:5px;text-align:center;margin-top:-4px}
+.links{display:flex;gap:28px;font-size:14px;font-weight:700}
+.links a:hover{text-decoration:underline}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:70px 0;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #111;width:230px;height:230px;transform:rotate(45deg);opacity:.12}
+.hero:before{left:-130px;top:80px}.hero:after{right:-130px;bottom:50px}
+.mono{font-family:Georgia,serif;font-size:clamp(70px,13vw,150px);font-weight:700;line-height:.8;letter-spacing:-10px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,78px);letter-spacing:2px;margin:18px 0 6px}
+.subtitle{letter-spacing:5px;font-size:13px;font-weight:700}
+.tagline{margin:25px auto;max-width:600px;color:#555}
+.btn{display:inline-block;background:#111;color:#fff;padding:14px 24px;border:2px solid #111;font-weight:700;margin:6px}
+.btn.light{background:#fff;color:#111}
+section{padding:85px 0}
+.section-title{text-align:center;font-family:Georgia,serif;font-size:42px;margin-bottom:12px}
+.section-line{width:70px;height:3px;background:#111;margin:0 auto 45px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-art{min-height:330px;border:2px solid #111;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#111 0 14%,#fff 14% 86%,#111 86%)}
+.about-art:after{content:"WS";font:700 120px Georgia,serif}
+.about p{color:#555;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:1px solid #ccc;padding:28px 18px;text-align:center;min-height:190px;display:flex;flex-direction:column;justify-content:center}
+.icon{font-size:40px;margin-bottom:12px}
+.card h3{font-family:Georgia,serif;font-size:22px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery-box{height:260px;background:#111;color:#fff;display:grid;place-items:center;text-align:center;padding:20px;border:8px solid #fff;outline:1px solid #111}
+.gallery-box span{font-family:Georgia,serif;font-size:24px}
+.contact{background:#111;color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.contact p{color:#ccc;margin:10px 0}
+.contact .btn{background:#fff;color:#111;border-color:#fff}
+footer{background:#050505;color:#aaa;text-align:center;padding:28px;font-size:13px}
+@media(max-width:800px){
+ .links{display:none}.hero{min-height:72vh}
+ .about,.contact-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .gallery{grid-template-columns:1fr}
+ section{padding:65px 0}
+}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.nav{height:64px}.mono{font-size:85px}}
+
+.gallery-admin{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.upload-btn{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:#111;color:#fff;padding:12px 18px;border:2px solid #111;font-weight:700}
+.upload-btn:hover{background:#fff;color:#111}
+.upload-input{display:none}
+.user-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.user-photo{position:relative;overflow:hidden;border:1px solid #ccc;background:#f5f5f5;aspect-ratio:4/3}
+.user-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.remove-photo{position:absolute;right:8px;top:8px;border:0;background:#111;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:18px}
+.empty-note{text-align:center;color:#777;margin-top:18px}
+@media(max-width:800px){.user-gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.user-gallery{grid-template-columns:1fr}}
+
+.craft-form{max-width:760px;margin:0 auto;border:1px solid #ccc;padding:32px;background:#fff}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;font-weight:700;letter-spacing:.5px}
+.field input{padding:14px;border:1px solid #aaa;font:inherit;outline:none}
+.field input:focus{border-color:#111}
+.submit-row{text-align:center;margin-top:20px}
+.requests{margin-top:32px}
+.request-item{border:1px solid #ddd;padding:18px;margin-top:12px;display:flex;justify-content:space-between;gap:15px;align-items:center}
+.request-item small{display:block;color:#777;margin-top:4px}
+.request-remove{border:1px solid #111;background:#fff;padding:8px 12px;cursor:pointer}
+.notice{font-size:13px;color:#666;text-align:center;margin-top:12px}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.request-item{flex-direction:column;align-items:flex-start}}
+
+.mono{width:120px;height:120px;margin:0 auto 22px;border:3px solid #111;border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:54px;font-weight:900;letter-spacing:-5px;position:relative;background:#fff;box-shadow:10px 10px 0 #111;}
+.mono::after{content:"";position:absolute;inset:10px;border:1px solid #111;border-radius:18px;pointer-events:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav">
+    <a href="#" class="logo">CRAFTLAND<span>FOLLOWER UPGRADE</span></a>
+    <div class="links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#craftland">Craftland</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="mono">CF</div>
+    <h1>CRAFTLAND</h1>
+    <div class="subtitle">FOLLOWER UPGRADE</div>
+    <p class="tagline">GROW YOUR CRAFTLAND COMMUNITY</p>
+    <a class="btn" href="#craftland">Add Your Map</a>
+  </div>
+</section>
+
+<section id="about">
+ <div class="container about">
+  <div class="about-art" aria-label="Special CF Craftland Follower Upgrade monogram"></div>
+  <div>
+   <h2 class="section-title" style="text-align:left">Craftland Community</h2>
+   <div class="section-line" style="margin-left:0"></div>
+   <p>Welcome to <b>Craftland Follower Upgrade</b> — a simple place to share your Free Fire MAX Craftland map details and help players discover your maps.</p>
+   <p>Add your UID, map code and map name so your Craftland map can be showcased to visitors.</p>
+  </div>
+ </div>
+</section>
+
+<section id="furniture">
+ <div class="container">
+  <h2 class="section-title">Craftland Features</h2><div class="section-line"></div>
+  <div class="cards">
+   <div class="card"><div class="icon">＋</div><h3>Add Map</h3><p>Submit your UID and map details.</p></div>
+   <div class="card"><div class="icon">◇</div><h3>Map Code</h3><p>Share your Craftland map code.</p></div>
+   <div class="card"><div class="icon">◎</div><h3>Map Name</h3><p>Show visitors what your map is called.</p></div>
+   <div class="card"><div class="icon">↗</div><h3>Community</h3><p>Help players discover more maps.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <h2 class="section-title">Craftland Gallery</h2><div class="section-line"></div>
+  <div class="gallery">
+   <div class="gallery-box"><span>YOUR MAP PHOTO</span></div>
+   <div class="gallery-box"><span>YOUR CRAFTLAND SCREENSHOT</span></div>
+   <div class="gallery-box"><span>YOUR MAP DESIGN</span></div>
+  </div>
+  <div id="userGallery" class="user-gallery"></div>
+  <div class="gallery-admin">
+    <label class="upload-btn" for="galleryUpload">＋ Add Photos</label>
+    <input id="galleryUpload" class="upload-input" type="file" accept="image/*" multiple>
+  </div>
+  <p class="empty-note">Tap ＋ Add Photos to choose images from your phone and add them to your gallery.</p>
+ </div>
+</section>
+
+
+<section id="craftland">
+ <div class="container">
+  <h2 class="section-title">Craftland Support</h2>
+  <div class="section-line"></div>
+  <div class="craft-form">
+   <p style="text-align:center;color:#555;margin-bottom:25px">
+    Enter your Free Fire MAX UID and Craftland map details. Your request will be saved on this device.
+   </p>
+   <form id="craftForm">
+    <div class="form-grid">
+     <div class="field">
+      <label for="uid">FREE FIRE UID</label>
+      <input id="uid" name="uid" inputmode="numeric" placeholder="Enter your UID" required>
+     </div>
+     <div class="field">
+      <label for="mapcode">CRAFTLAND MAP CODE</label>
+      <input id="mapcode" name="mapcode" placeholder="Enter map code" required>
+     </div>
+     <div class="field full">
+      <label for="mapname">MAP NAME</label>
+      <input id="mapname" name="mapname" placeholder="Enter your map name" required>
+     </div>
+    </div>
+    <div class="submit-row">
+     <button class="btn" type="submit">＋ Add My Map</button>
+    </div>
+   </form>
+   <p class="notice">This form only collects the details. It cannot automatically add followers or change Free Fire accounts.</p>
+  </div>
+  <div id="requests" class="requests"></div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container contact-grid">
+  <div>
+   <h2 class="section-title" style="text-align:left;color:#fff">Let's Create Something Beautiful</h2>
+   <div class="section-line" style="margin-left:0;background:#fff"></div>
+   <p>Have an idea for your home? Share your Craftland map details and grow your community.</p>
+  </div>
+  <div>
+ </div>
+ </div>
+</section>
+</main>
+
+<footer>© 2026 Craftland Follower Upgrade • Grow Your Craftland Community</footer>
+
+<script>
+const upload=document.getElementById('galleryUpload'), gallery=document.getElementById('userGallery');
+const DB='craftlandFollowerGallery', STORE='photos';
+function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE,{keyPath:'id',autoIncrement:true});r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function readFile(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f)})}
+async function add(f){const db=await openDB(),data=await readFile(f);return new Promise((res,rej)=>{const t=db.transaction(STORE,'readwrite');t.objectStore(STORE).add({name:f.name,data});t.oncomplete=res;t.onerror=()=>rej(t.error)})}
+async function load(){const db=await openDB();const photos=await new Promise((res,rej)=>{const t=db.transaction(STORE,'readonly'),r=t.objectStore(STORE).getAll();r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});gallery.innerHTML='';photos.forEach(p=>{const d=document.createElement('div');d.className='user-photo';d.innerHTML='<img alt="Gallery photo"><button class="remove-photo" title="Remove photo">×</button>';d.querySelector('img').src=p.data;d.querySelector('button').onclick=async()=>{const db=await openDB(),t=db.transaction(STORE,'readwrite');t.objectStore(STORE).delete(p.id);t.oncomplete=load};gallery.appendChild(d)})}
+upload.addEventListener('change',async e=>{for(const f of e.target.files)if(f.type.startsWith('image/'))await add(f);upload.value='';load()});
+load();
+</script>
+
+
+<script>
+const craftForm=document.getElementById('craftForm');
+const requestsBox=document.getElementById('requests');
+const REQUEST_KEY='craftlandFollowerRequests';
+
+function loadRequests(){
+  const list=JSON.parse(localStorage.getItem(REQUEST_KEY)||'[]');
+  requestsBox.innerHTML=list.length
+    ? '<h3 style="font-family:Georgia,serif;font-size:28px">Added Maps</h3>'
+    : '';
+  list.forEach((item,index)=>{
+    const div=document.createElement('div');
+    div.className='request-item';
+    div.innerHTML='<div><b>'+escapeHtml(item.mapname)+'</b><small>UID: '+escapeHtml(item.uid)+' · Map Code: '+escapeHtml(item.mapcode)+'</small></div><button class="request-remove" data-index="'+index+'">Remove</button>';
+    requestsBox.appendChild(div);
+  });
+  document.querySelectorAll('.request-remove').forEach(btn=>{
+    btn.onclick=()=>{
+      const list=JSON.parse(localStorage.getItem(REQUEST_KEY)||'[]');
+      list.splice(Number(btn.dataset.index),1);
+      localStorage.setItem(REQUEST_KEY,JSON.stringify(list));
+      loadRequests();
+    };
+  });
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+craftForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const item={
+    uid:document.getElementById('uid').value.trim(),
+    mapcode:document.getElementById('mapcode').value.trim(),
+    mapname:document.getElementById('mapname').value.trim()
+  };
+  if(!item.uid||!item.mapcode||!item.mapname)return;
+  const list=JSON.parse(localStorage.getItem(REQUEST_KEY)||'[]');
+  list.unshift(item);
+  localStorage.setItem(REQUEST_KEY,JSON.stringify(list));
+  craftForm.reset();
+  loadRequests();
+});
+loadRequests();
+</script>
+
+</body>
+</html>
